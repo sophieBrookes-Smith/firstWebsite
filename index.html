@@ -1,0 +1,42 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>First Page! </h1>
+
+    <p>Press f12 to open the console</p>
+
+
+    <input type="button" onclick="doSophiesCode01('i love boris');" value="Do some code" />
+    <input type="button" onclick="doSophiesCode01('i love basil');" value="Do some other code" />
+    <p id="resultsFromCode01">you smell</p>
+
+
+</body>
+
+<script>
+    function doSophiesCode01(somethingPassedIn) {
+
+        // you can put messages to the console (press f12 in the browser to see the console)
+        console.log("This is the thing that was passed in: " + somethingPassedIn);
+
+        // and you can update the screen like this
+        let cup = document.getElementById('resultsFromCode01').innerHTML;
+       //let cup = " poo "
+        document.getElementById('resultsFromCode01').innerHTML = somethingPassedIn  + "   < This is Sophies program >   " + cup;
+
+        for (let counter = 0; counter < 1000; counter = counter + 1){
+            let cup = document.getElementById('resultsFromCode01').innerHTML;
+            document.getElementById('resultsFromCode01').innerHTML = "Sophie did " + counter + " poos <br> " + cup;
+            
+        }
+
+    }
+</script>
+
+</html>
