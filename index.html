@@ -11,10 +11,11 @@
 
     <p>Press f12 to open the console</p>
 
+    <p> <input type="button" onclick="doSophiesCode01('I love Boris and ');" value="Do some code" /></p>
 
-    <input type="button" onclick="doSophiesCode01('i love boris');" value="Do some code" />
-    <input type="button" onclick="doSophiesCode01('i love basil');" value="Do some other code" />
-    <p id="resultsFromCode01">you smell</p>
+    <p> <input type="button" onclick="doSophiesCode01('I love Basil but ');" value="Do some other code" /></p>
+   
+    <p id="results">you smell</p>
 
 
 </body>
@@ -26,13 +27,16 @@
         console.log("This is the thing that was passed in: " + somethingPassedIn);
 
         // and you can update the screen like this
-        let cup = document.getElementById('resultsFromCode01').innerHTML;
+        let cup = document.getElementById('results').innerHTML;
        //let cup = " poo "
-        document.getElementById('resultsFromCode01').innerHTML = somethingPassedIn  + "   < This is Sophies program >   " + cup;
-
-        for (let counter = 0; counter < 1000; counter = counter + 1){
-            let cup = document.getElementById('resultsFromCode01').innerHTML;
-            document.getElementById('resultsFromCode01').innerHTML = "Sophie did " + counter + " poos <br> " + cup;
+        //document.getElementById('results').innerHTML = somethingPassedIn  + "   < This is Sophies program >   " ;
+    document.getElementById('results').innerHTML = "";
+        for (let counter = 0; counter < 10; counter = counter + 1){
+            if (counter == 1) {
+                var pooWord = " poo"
+                } else {var pooWord = " poos"}
+            let cup = document.getElementById('results').innerHTML;
+            document.getElementById('results').innerHTML = cup + somethingPassedIn + " Sophie did " + counter + pooWord + "<br> " ;
             
         }
 
