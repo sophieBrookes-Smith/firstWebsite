@@ -1,0 +1,56 @@
+
+<!DOCTYPE html>
+<html>
+
+<head>
+
+</head>
+
+<body>
+    <h1>First Page! </h1>
+
+    <p>Press f12 to open the console</p>
+
+
+    <p> <input type="button" onclick="generateStory01('Two Go Wild... ');" value="Generate a story" /></p>
+   
+    <p id="results">you smell</p>
+
+
+</body>
+
+<script>
+    function generateStory01(theStoryTitle) {
+
+        // you can put messages to the console (press f12 in the browser to see the console)
+        console.log("This is the thing that was passed in: " + theStoryTitle);
+
+        // define the protagonists
+        let protagonist01 = ["Sophie","Inky","Binky","Bonky","Bertram"];
+        let protagonist02 = ["PoopyPants","Pete","Plopster","Poohead","FrogBreath"];
+        let place01 = ["at the beach","in the park","in Spain","at maccie d's","in prison"];
+        let action01 = ["fought","kissed","died","met their nemesis","found Boris and Basil"];
+
+        console.log(protagonist01[1])
+        console.log("the number of protagonists is: " + protagonist01.length)
+
+        let protagonist01Index = Math.floor(Math.random()*protagonist01.length);
+        let protagonist02Index = Math.floor(Math.random()*protagonist02.length);
+        let place01Index = Math.floor(Math.random()*place01.length);
+        let action01Index = Math.floor(Math.random()*action01.length);
+    
+        console.log("The pointer to the protagonist is: " + protagonist01Index);
+        console.log(protagonist01[protagonist01Index]);
+        console.log(protagonist02[protagonist02Index]);
+
+        let storyText = protagonist01[protagonist01Index]
+        storyText = storyText + " and " + protagonist02[protagonist02Index]
+        storyText = storyText + " " + action01[action01Index]
+        storyText = storyText + " " + place01[place01Index]
+
+        document.getElementById('results').innerHTML = storyText
+    }
+
+</script>
+
+</html>
