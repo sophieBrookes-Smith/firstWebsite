@@ -12,14 +12,54 @@
     <p>Press f12 to open the console</p>
 
 
-    <p> <input type="button" onclick="generateStory01('Two Go Wild... ');" value="Generate a story" /></p>
-   
+    <p> <input type="button" onclick="generateStory01('Two Go Wild... ');" value="Generate a simple story" /></p>
+   <p> <input type="button" onclick="generateStory02('Vampirelicious... ');" value="Generate a vampire story" /></p>
     <p id="results">you smell</p>
 
 
 </body>
 
 <script>
+    function returnStoryParameters(storyGroup) {
+        var storyParameters = {};
+        
+        if(storyGroup=="vampireDiaries") {
+                 
+            // define the protagonists
+            storyParameters.protagonists = ["Bonnie","Caroline","Elena","Lily","Jo", "Damon","Stephan","Jeremy", "Enzo","Matt","Alaric"];
+            storyParameters.places = ["the Salvetore Mansion","the Mystic Grill","Witmore College","the swimming hole","the Salvetore crypt"];
+            storyParameters.actions = ["were surprised that their fool proof plan went wrong","kissed passionately on the lips","died by having their hearts ripped out","realised they loved each other after all","discovered some ancient magic"];
+        
+        return storyParameters;
+        }
+    }
+
+    function generateStory02(){
+
+        let storyParameters = returnStoryParameters("vampireDiaries");
+
+        let protagonist01Index =Math.floor(Math.random()*storyParameters.protagonists.length);
+        let protagonist02Index=protagonist01Index;
+
+        // choose a second protagonist that is not the same as protagonist01
+        while(protagonist01Index==protagonist02Index) {
+            protagonist02Index =Math.floor(Math.random()*storyParameters.protagonists.length);
+        }
+
+        let place01Index = Math.floor(Math.random()*storyParameters.places.length);
+        let action01Index = Math.floor(Math.random()*storyParameters.actions.length);
+
+        
+        let storyText = storyParameters.protagonists[protagonist01Index];
+        storyText = storyText + " and " + storyParameters.protagonists[protagonist02Index];
+        storyText = storyText + " " + storyParameters.actions[action01Index];
+        storyText = storyText + " at " + storyParameters.places[place01Index];
+        document.getElementById('results').innerHTML = storyText;
+    }
+
+
+
+
     function generateStory01(theStoryTitle) {
 
         // you can put messages to the console (press f12 in the browser to see the console)
